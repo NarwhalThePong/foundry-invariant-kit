@@ -82,6 +82,8 @@ cd examples && ./install-deps.sh && forge test   # installs pinned forge-std bd8
 The `examples/` project contains safe and deliberately buggy samples; the buggy
 suites are expected to fail.
 
+Want a hand with a pre-audit review of a Solidity project? The [Smart Contract Pre-Audit Review Pack](https://payhip.com/b/G5agO) is a self-review aid with a 66-item checklist, a 40-point audit-readiness scoring sheet and scope/known-issues/threat-model templates. It is not an audit and gives no security guarantee ($19, our own paid product).
+
 ## License
 
 MIT
