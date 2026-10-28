@@ -1,5 +1,7 @@
 # foundry-invariant-kit
 
+[![npm](https://img.shields.io/npm/v/foundry-invariant-kit.svg)](https://www.npmjs.com/package/foundry-invariant-kit) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Generate a Foundry invariant/fuzz test scaffold from a Solidity contract.
 
 **This tool generates a starting point for your own invariant testing. It is
