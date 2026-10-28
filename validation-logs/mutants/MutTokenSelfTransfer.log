@@ -1,0 +1,77 @@
+No files changed, compilation skipped
+{"timestamp":1793150681,"event":"failure","invariant":"invariant_noBalanceExceedsTotalSupply","target":"test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferInvariant.t.sol:MutTokenSelfTransferInvariantTest","reason":"balance exceeds totalSupply: 2000000000000000000000000000000 > 1003261595296125932851107072916"}
+{"timestamp":1793150681,"event":"failure","invariant":"invariant_totalSupplyEqualsSumOfBalances","target":"test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferInvariant.t.sol:MutTokenSelfTransferInvariantTest","reason":"totalSupply != sum of tracked balances: 1003261595296125932851107072916 != 2003261595296125932851107072916"}
+{"timestamp":1793150681,"event":"failure","invariant":"invariant_transfersMoveExactAmount","target":"test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferInvariant.t.sol:MutTokenSelfTransferInvariantTest","reason":"a transfer did not move exactly the amount"}
+
+Ran 1 test for test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferInvariant.t.sol:MutTokenSelfTransferInvariantTest
+[FAIL: balance exceeds totalSupply: 2000000000000000000000000000000 > 1003261595296125932851107072916] invariant_noBalanceExceedsTotalSupply
+	[Sequence] (original: 7, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000b4A addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x00000000000000000000000000000000000003E0 addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4078, 1, 1000000000000000000000000000000 [1e30]]
+
+[FAIL: totalSupply != sum of tracked balances: 1003261595296125932851107072916 != 2003261595296125932851107072916] invariant_totalSupplyEqualsSumOfBalances
+	[Sequence] (original: 7, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000b4A addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x00000000000000000000000000000000000003E0 addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4078, 1, 1000000000000000000000000000000 [1e30]]
+
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+	[Sequence] (original: 7, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000b4A addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x00000000000000000000000000000000000003E0 addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4078, 1, 1000000000000000000000000000000 [1e30]]
+
+MutTokenSelfTransferInvariantTest invariants: 3/5 invariants broken
+[PASS] invariant_allowanceAccounting
+[FAIL: balance exceeds totalSupply: 2000000000000000000000000000000 > 1003261595296125932851107072916] invariant_noBalanceExceedsTotalSupply
+[FAIL: totalSupply != sum of tracked balances: 1003261595296125932851107072916 != 2003261595296125932851107072916] invariant_totalSupplyEqualsSumOfBalances
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+[PASS] invariant_transfersNeverChangeTotalSupply
+3 invariant failure(s) persisted to cache/invariant/failures/MutTokenSelfTransferInvariantTest — rerun to shrink
+ MutTokenSelfTransferInvariantTest invariants (runs: 64, calls: 4096, reverts: 454)
+
+╭-----------------------------+--------------+-------+---------+----------╮
+| Contract                    | Selector     | Calls | Reverts | Discards |
++=========================================================================+
+| MutTokenSelfTransferHandler | approve      | 1045  | 0       | 0        |
+|-----------------------------+--------------+-------+---------+----------|
+| MutTokenSelfTransferHandler | mint         | 958   | 396     | 0        |
+|-----------------------------+--------------+-------+---------+----------|
+| MutTokenSelfTransferHandler | transfer     | 1074  | 41      | 0        |
+|-----------------------------+--------------+-------+---------+----------|
+| MutTokenSelfTransferHandler | transferFrom | 1019  | 17      | 0        |
+╰-----------------------------+--------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 8.50s (8.50s CPU time)
+
+Ran 1 test suite in 8.50s (8.50s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferInvariant.t.sol:MutTokenSelfTransferInvariantTest
+[FAIL: balance exceeds totalSupply: 2000000000000000000000000000000 > 1003261595296125932851107072916] invariant_noBalanceExceedsTotalSupply
+	[Sequence] (original: 7, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000b4A addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x00000000000000000000000000000000000003E0 addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4078, 1, 1000000000000000000000000000000 [1e30]]
+
+[FAIL: totalSupply != sum of tracked balances: 1003261595296125932851107072916 != 2003261595296125932851107072916] invariant_totalSupplyEqualsSumOfBalances
+	[Sequence] (original: 7, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000b4A addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x00000000000000000000000000000000000003E0 addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4078, 1, 1000000000000000000000000000000 [1e30]]
+
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+	[Sequence] (original: 7, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000b4A addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x00000000000000000000000000000000000003E0 addr=[test/invariant/MutTokenSelfTransfer/MutTokenSelfTransferHandler.sol:MutTokenSelfTransferHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4078, 1, 1000000000000000000000000000000 [1e30]]
+
+MutTokenSelfTransferInvariantTest invariants: 3/5 invariants broken
+[PASS] invariant_allowanceAccounting
+[FAIL: balance exceeds totalSupply: 2000000000000000000000000000000 > 1003261595296125932851107072916] invariant_noBalanceExceedsTotalSupply
+[FAIL: totalSupply != sum of tracked balances: 1003261595296125932851107072916 != 2003261595296125932851107072916] invariant_totalSupplyEqualsSumOfBalances
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+[PASS] invariant_transfersNeverChangeTotalSupply
+3 invariant failure(s) persisted to cache/invariant/failures/MutTokenSelfTransferInvariantTest — rerun to shrink
+ MutTokenSelfTransferInvariantTest invariants (runs: 64, calls: 4096, reverts: 454)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xbb766a5d45c7247c8b459a3efa27725faccdc1f4be7328ba3b5f7abb31f7b8 (use `--fuzz-seed` to reproduce)

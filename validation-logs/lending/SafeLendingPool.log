@@ -1,0 +1,33 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 561.82ms
+Compiler run successful!
+
+Ran 1 test for test/invariant/SafeLendingPool/SafeLendingPoolInvariant.t.sol:SafeLendingPoolInvariantTest
+[PASS]
+SafeLendingPoolInvariantTest invariants:
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+ SafeLendingPoolInvariantTest invariants (runs: 64, calls: 4096, reverts: 1496)
+
+╭------------------------+-----------+-------+---------+----------╮
+| Contract               | Selector  | Calls | Reverts | Discards |
++=================================================================+
+| SafeLendingPoolHandler | borrow    | 788   | 343     | 0        |
+|------------------------+-----------+-------+---------+----------|
+| SafeLendingPoolHandler | deposit   | 840   | 0       | 0        |
+|------------------------+-----------+-------+---------+----------|
+| SafeLendingPoolHandler | liquidate | 799   | 799     | 0        |
+|------------------------+-----------+-------+---------+----------|
+| SafeLendingPoolHandler | repay     | 843   | 0       | 0        |
+|------------------------+-----------+-------+---------+----------|
+| SafeLendingPoolHandler | withdraw  | 826   | 354     | 0        |
+╰------------------------+-----------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 791.78ms (788.21ms CPU time)
+
+Ran 1 test suite in 795.17ms (791.78ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

@@ -1,0 +1,55 @@
+No files changed, compilation skipped
+{"timestamp":1793150670,"event":"failure","invariant":"invariant_allowanceAccounting","target":"test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendInvariant.t.sol:MutTokenNoAllowanceSpendInvariantTest","reason":"allowance not set/spent as expected"}
+
+Ran 1 test for test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendInvariant.t.sol:MutTokenNoAllowanceSpendInvariantTest
+[FAIL: allowance not set/spent as expected] invariant_allowanceAccounting
+	[Sequence] (original: 28, shrunk: 3)
+		sender=0x0000000000000000000000000000000000000247 addr=[test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendHandler.sol:MutTokenNoAllowanceSpendHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=approve(uint256,uint256,uint256) args=[18, 19797 [1.979e4], 18302 [1.83e4]]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendHandler.sol:MutTokenNoAllowanceSpendHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[305166325267390144909422 [3.051e23], 144724533983912265530348889723942935935863633412156673615 [1.447e56]]
+		sender=0x000000000000000000000000000000000000217C addr=[test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendHandler.sol:MutTokenNoAllowanceSpendHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transferFrom(uint256,uint256,uint256,uint256) args=[63023365384589235464705619824629523281965372575342956379525367989878453250379 [6.302e76], 18435 [1.843e4], 24014 [2.401e4], 1000000000000000000 [1e18]]
+
+MutTokenNoAllowanceSpendInvariantTest invariants: 1/5 invariants broken
+[FAIL: allowance not set/spent as expected] invariant_allowanceAccounting
+[PASS] invariant_noBalanceExceedsTotalSupply
+[PASS] invariant_totalSupplyEqualsSumOfBalances
+[PASS] invariant_transfersMoveExactAmount
+[PASS] invariant_transfersNeverChangeTotalSupply
+ MutTokenNoAllowanceSpendInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭---------------------------------+--------------+-------+---------+----------╮
+| Contract                        | Selector     | Calls | Reverts | Discards |
++=============================================================================+
+| MutTokenNoAllowanceSpendHandler | approve      | 978   | 0       | 0        |
+|---------------------------------+--------------+-------+---------+----------|
+| MutTokenNoAllowanceSpendHandler | mint         | 1010  | 0       | 0        |
+|---------------------------------+--------------+-------+---------+----------|
+| MutTokenNoAllowanceSpendHandler | transfer     | 1018  | 0       | 0        |
+|---------------------------------+--------------+-------+---------+----------|
+| MutTokenNoAllowanceSpendHandler | transferFrom | 1090  | 0       | 0        |
+╰---------------------------------+--------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.17s (5.16s CPU time)
+
+Ran 1 test suite in 5.17s (5.17s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendInvariant.t.sol:MutTokenNoAllowanceSpendInvariantTest
+[FAIL: allowance not set/spent as expected] invariant_allowanceAccounting
+	[Sequence] (original: 28, shrunk: 3)
+		sender=0x0000000000000000000000000000000000000247 addr=[test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendHandler.sol:MutTokenNoAllowanceSpendHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=approve(uint256,uint256,uint256) args=[18, 19797 [1.979e4], 18302 [1.83e4]]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendHandler.sol:MutTokenNoAllowanceSpendHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[305166325267390144909422 [3.051e23], 144724533983912265530348889723942935935863633412156673615 [1.447e56]]
+		sender=0x000000000000000000000000000000000000217C addr=[test/invariant/MutTokenNoAllowanceSpend/MutTokenNoAllowanceSpendHandler.sol:MutTokenNoAllowanceSpendHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transferFrom(uint256,uint256,uint256,uint256) args=[63023365384589235464705619824629523281965372575342956379525367989878453250379 [6.302e76], 18435 [1.843e4], 24014 [2.401e4], 1000000000000000000 [1e18]]
+
+MutTokenNoAllowanceSpendInvariantTest invariants: 1/5 invariants broken
+[FAIL: allowance not set/spent as expected] invariant_allowanceAccounting
+[PASS] invariant_noBalanceExceedsTotalSupply
+[PASS] invariant_totalSupplyEqualsSumOfBalances
+[PASS] invariant_transfersMoveExactAmount
+[PASS] invariant_transfersNeverChangeTotalSupply
+ MutTokenNoAllowanceSpendInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x8d49f126f674d14ff82f3b31cf71d132a23a02897531486635e87a2c7aa6fd5e (use `--fuzz-seed` to reproduce)

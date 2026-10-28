@@ -1,0 +1,65 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 611.10ms
+Compiler run successful!
+{"timestamp":1793150739,"event":"failure","invariant":"invariant_previewsAreConservative","target":"test/invariant/MutVaultPreviewMint/MutVaultPreviewMintInvariant.t.sol:MutVaultPreviewMintInvariantTest","reason":"previewMint < assets pulled by mint"}
+
+Ran 1 test for test/invariant/MutVaultPreviewMint/MutVaultPreviewMintInvariant.t.sol:MutVaultPreviewMintInvariantTest
+[FAIL: previewMint < assets pulled by mint] invariant_previewsAreConservative
+	[Sequence] (original: 1, shrunk: 1)
+		sender=0x3e7F6bce6503bE9b6cadc60aeD4683B7eDa67363 addr=[test/invariant/MutVaultPreviewMint/MutVaultPreviewMintHandler.sol:MutVaultPreviewMintHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=mint(uint256,uint256) args=[3, 12324 [1.232e4]]
+
+MutVaultPreviewMintInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[FAIL: previewMint < assets pulled by mint] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewMintInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭----------------------------+------------------------+-------+---------+----------╮
+| Contract                   | Selector               | Calls | Reverts | Discards |
++==================================================================================+
+| MutVaultPreviewMintHandler | checkConversions       | 558   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewMintHandler | deposit                | 592   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewMintHandler | depositRedeemRoundTrip | 581   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewMintHandler | donate                 | 576   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewMintHandler | mint                   | 580   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewMintHandler | redeem                 | 609   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewMintHandler | withdraw               | 600   | 0       | 0        |
+╰----------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.25s (1.25s CPU time)
+
+Ran 1 test suite in 1.26s (1.25s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultPreviewMint/MutVaultPreviewMintInvariant.t.sol:MutVaultPreviewMintInvariantTest
+[FAIL: previewMint < assets pulled by mint] invariant_previewsAreConservative
+	[Sequence] (original: 1, shrunk: 1)
+		sender=0x3e7F6bce6503bE9b6cadc60aeD4683B7eDa67363 addr=[test/invariant/MutVaultPreviewMint/MutVaultPreviewMintHandler.sol:MutVaultPreviewMintHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=mint(uint256,uint256) args=[3, 12324 [1.232e4]]
+
+MutVaultPreviewMintInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[FAIL: previewMint < assets pulled by mint] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewMintInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x6d6a17c74d41bcbe3f97d8b625a269cd114da2bf39a2b6db1b4df65fdeb744a0 (use `--fuzz-seed` to reproduce)

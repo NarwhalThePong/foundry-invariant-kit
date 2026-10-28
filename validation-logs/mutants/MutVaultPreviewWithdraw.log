@@ -1,0 +1,67 @@
+Compiling 83 files with Solc 0.8.24
+Solc 0.8.24 finished in 2.21s
+Compiler run successful!
+{"timestamp":1793150893,"event":"failure","invariant":"invariant_previewsAreConservative","target":"test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawInvariant.t.sol:MutVaultPreviewWithdrawInvariantTest","reason":"previewWithdraw < shares burned by withdraw"}
+
+Ran 1 test for test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawInvariant.t.sol:MutVaultPreviewWithdrawInvariantTest
+[FAIL: previewWithdraw < shares burned by withdraw] invariant_previewsAreConservative
+	[Sequence] (original: 13, shrunk: 2)
+		sender=0x0018851998fb244Ced22D53Da9BA5D6F63542fd9 addr=[test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawHandler.sol:MutVaultPreviewWithdrawHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[100, 1000000000000000000000000000000 [1e30]]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawHandler.sol:MutVaultPreviewWithdrawHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256,uint256) args=[1000000 [1e6], 100]
+
+MutVaultPreviewWithdrawInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[FAIL: previewWithdraw < shares burned by withdraw] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewWithdrawInvariantTest invariants (runs: 64, calls: 4096, reverts: 155)
+
+╭--------------------------------+------------------------+-------+---------+----------╮
+| Contract                       | Selector               | Calls | Reverts | Discards |
++======================================================================================+
+| MutVaultPreviewWithdrawHandler | checkConversions       | 592   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewWithdrawHandler | deposit                | 592   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewWithdrawHandler | depositRedeemRoundTrip | 569   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewWithdrawHandler | donate                 | 585   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewWithdrawHandler | mint                   | 569   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewWithdrawHandler | redeem                 | 588   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewWithdrawHandler | withdraw               | 601   | 155     | 0        |
+╰--------------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.77s (1.77s CPU time)
+
+Ran 1 test suite in 1.78s (1.77s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawInvariant.t.sol:MutVaultPreviewWithdrawInvariantTest
+[FAIL: previewWithdraw < shares burned by withdraw] invariant_previewsAreConservative
+	[Sequence] (original: 13, shrunk: 2)
+		sender=0x0018851998fb244Ced22D53Da9BA5D6F63542fd9 addr=[test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawHandler.sol:MutVaultPreviewWithdrawHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[100, 1000000000000000000000000000000 [1e30]]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutVaultPreviewWithdraw/MutVaultPreviewWithdrawHandler.sol:MutVaultPreviewWithdrawHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256,uint256) args=[1000000 [1e6], 100]
+
+MutVaultPreviewWithdrawInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[FAIL: previewWithdraw < shares burned by withdraw] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewWithdrawInvariantTest invariants (runs: 64, calls: 4096, reverts: 155)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x6aab88e876bd3f8e87be949fc4117af46f9dcd9475770e14679871ed9d66b6bd (use `--fuzz-seed` to reproduce)

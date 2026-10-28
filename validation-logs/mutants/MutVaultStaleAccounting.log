@@ -1,0 +1,55 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingInvariant.t.sol:MutVaultStaleAccountingInvariantTest
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 4078] invariant_assetsHeldCoverTotalAssets
+	[Sequence] (original: 1, shrunk: 1)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingHandler.sol:MutVaultStaleAccountingHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=depositRedeemRoundTrip(uint256,uint256) args=[8287, 4078]
+
+[FAIL: vault cannot pay out all shares at the current redeem price: 999999000000000000000000000000 < 999999999999999999999999999999] invariant_solvency
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingHandler.sol:MutVaultStaleAccountingHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x8B7652e3790bE7cc74252f9651568430E9F28d2F addr=[test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingHandler.sol:MutVaultStaleAccountingHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=redeem(uint256,uint256) args=[7081, 1000000000000000000000000 [1e24]]
+
+MutVaultStaleAccountingInvariantTest invariants: 2/8 invariants broken
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 4078] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[FAIL: vault cannot pay out all shares at the current redeem price: 999999000000000000000000000000 < 999999999999999999999999999999] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutVaultStaleAccountingInvariantTest — rerun to shrink
+ MutVaultStaleAccountingInvariantTest invariants (runs: 0, calls: 0, reverts: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 9.39ms (5.61ms CPU time)
+
+Ran 1 test suite in 13.70ms (9.39ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingInvariant.t.sol:MutVaultStaleAccountingInvariantTest
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 4078] invariant_assetsHeldCoverTotalAssets
+	[Sequence] (original: 1, shrunk: 1)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingHandler.sol:MutVaultStaleAccountingHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=depositRedeemRoundTrip(uint256,uint256) args=[8287, 4078]
+
+[FAIL: vault cannot pay out all shares at the current redeem price: 999999000000000000000000000000 < 999999999999999999999999999999] invariant_solvency
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingHandler.sol:MutVaultStaleAccountingHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=mint(uint256,uint256) args=[4, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+		sender=0x8B7652e3790bE7cc74252f9651568430E9F28d2F addr=[test/invariant/MutVaultStaleAccounting/MutVaultStaleAccountingHandler.sol:MutVaultStaleAccountingHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=redeem(uint256,uint256) args=[7081, 1000000000000000000000000 [1e24]]
+
+MutVaultStaleAccountingInvariantTest invariants: 2/8 invariants broken
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 4078] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[FAIL: vault cannot pay out all shares at the current redeem price: 999999000000000000000000000000 < 999999999999999999999999999999] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutVaultStaleAccountingInvariantTest — rerun to shrink
+ MutVaultStaleAccountingInvariantTest invariants (runs: 0, calls: 0, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x15c9b0b92ea95c8655c45a0cf232098cba3c7c79e06d497c189119baba458a9c (use `--fuzz-seed` to reproduce)

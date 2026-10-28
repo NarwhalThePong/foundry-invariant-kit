@@ -1,0 +1,57 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 520.45ms
+Compiler run successful!
+
+Ran 1 test for test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvInvariant.t.sol:MutLendingIgnoreLtvInvariantTest
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[7500, 2019]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[1000000 [1e6], 1]
+
+[FAIL: borrow succeeded but left the borrower over the LTV] invariant_successfulBorrowStaysHealthy
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000001947 addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[942849023 [9.428e8], 136456835394385007732010799892824501601757 [1.364e41]]
+		sender=0x0000000000000000000000000000000000000275 addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[7813, 10000 [1e4]]
+
+MutLendingIgnoreLtvInvariantTest invariants: 2/7 invariants broken
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[FAIL: borrow succeeded but left the borrower over the LTV] invariant_successfulBorrowStaysHealthy
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutLendingIgnoreLtvInvariantTest — rerun to shrink
+ MutLendingIgnoreLtvInvariantTest invariants (runs: 0, calls: 0, reverts: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 7.53ms (3.78ms CPU time)
+
+Ran 1 test suite in 13.63ms (7.53ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvInvariant.t.sol:MutLendingIgnoreLtvInvariantTest
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[7500, 2019]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[1000000 [1e6], 1]
+
+[FAIL: borrow succeeded but left the borrower over the LTV] invariant_successfulBorrowStaysHealthy
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000001947 addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[942849023 [9.428e8], 136456835394385007732010799892824501601757 [1.364e41]]
+		sender=0x0000000000000000000000000000000000000275 addr=[test/invariant/MutLendingIgnoreLtv/MutLendingIgnoreLtvHandler.sol:MutLendingIgnoreLtvHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[7813, 10000 [1e4]]
+
+MutLendingIgnoreLtvInvariantTest invariants: 2/7 invariants broken
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[FAIL: borrow succeeded but left the borrower over the LTV] invariant_successfulBorrowStaysHealthy
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutLendingIgnoreLtvInvariantTest — rerun to shrink
+ MutLendingIgnoreLtvInvariantTest invariants (runs: 0, calls: 0, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xb513f198596445110ad35a62062bd0ca68029f077a7961258a19dec4a297ce42 (use `--fuzz-seed` to reproduce)

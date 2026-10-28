@@ -1,0 +1,30 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 597.53ms
+Compiler run successful!
+
+Ran 1 test for test/invariant/SimpleLendingPool/SimpleLendingPoolInvariant.t.sol:SimpleLendingPoolInvariantTest
+[PASS]
+SimpleLendingPoolInvariantTest invariants:
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+ SimpleLendingPoolInvariantTest invariants (runs: 64, calls: 4096, reverts: 879)
+
+╭--------------------------+----------+-------+---------+----------╮
+| Contract                 | Selector | Calls | Reverts | Discards |
++==================================================================+
+| SimpleLendingPoolHandler | borrow   | 1004  | 448     | 0        |
+|--------------------------+----------+-------+---------+----------|
+| SimpleLendingPoolHandler | deposit  | 1003  | 0       | 0        |
+|--------------------------+----------+-------+---------+----------|
+| SimpleLendingPoolHandler | repay    | 1035  | 0       | 0        |
+|--------------------------+----------+-------+---------+----------|
+| SimpleLendingPoolHandler | withdraw | 1054  | 431     | 0        |
+╰--------------------------+----------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 828.07ms (824.83ms CPU time)
+
+Ran 1 test suite in 832.12ms (828.07ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

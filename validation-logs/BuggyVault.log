@@ -1,0 +1,82 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 760.70ms
+Compiler run successful!
+{"timestamp":1793150732,"event":"failure","invariant":"invariant_conversionRoundTripNeverFavorsUser","target":"test/invariant/BuggyVault/BuggyVaultInvariant.t.sol:BuggyVaultInvariantTest","reason":"share/asset conversion round trip rounded in the user's favor"}
+{"timestamp":1793150732,"event":"failure","invariant":"invariant_depositRedeemCannotProfit","target":"test/invariant/BuggyVault/BuggyVaultInvariant.t.sol:BuggyVaultInvariantTest","reason":"deposit then redeem returned more assets than deposited"}
+
+Ran 1 test for test/invariant/BuggyVault/BuggyVaultInvariant.t.sol:BuggyVaultInvariantTest
+[FAIL: share/asset conversion round trip rounded in the user's favor] invariant_conversionRoundTripNeverFavorsUser
+	[Sequence] (original: 26, shrunk: 3)
+		sender=0x9A42CfA23D4B6aa02d7ecC510CC0F7699B569493 addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=donate(uint256) args=[8341]
+		sender=0x0000000000000000000000000000000000002E3a addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=mint(uint256,uint256) args=[1, 742]
+		sender=0x0000000000000000000000000000000000003AD6 addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=checkConversions(uint256) args=[9844]
+
+[FAIL: deposit then redeem returned more assets than deposited] invariant_depositRedeemCannotProfit
+	[Sequence] (original: 36, shrunk: 2)
+		sender=0x9A42CfA23D4B6aa02d7ecC510CC0F7699B569493 addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=donate(uint256) args=[8341]
+		sender=0x00000000000000000000000000000000000011Dd addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=depositRedeemRoundTrip(uint256,uint256) args=[3489, 12916 [1.291e4]]
+
+BuggyVaultInvariantTest invariants: 2/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[FAIL: share/asset conversion round trip rounded in the user's favor] invariant_conversionRoundTripNeverFavorsUser
+[FAIL: deposit then redeem returned more assets than deposited] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+2 invariant failure(s) persisted to cache/invariant/failures/BuggyVaultInvariantTest — rerun to shrink
+ BuggyVaultInvariantTest invariants (runs: 64, calls: 4096, reverts: 13)
+
+╭-------------------+------------------------+-------+---------+----------╮
+| Contract          | Selector               | Calls | Reverts | Discards |
++=========================================================================+
+| BuggyVaultHandler | checkConversions       | 589   | 0       | 0        |
+|-------------------+------------------------+-------+---------+----------|
+| BuggyVaultHandler | deposit                | 614   | 0       | 0        |
+|-------------------+------------------------+-------+---------+----------|
+| BuggyVaultHandler | depositRedeemRoundTrip | 566   | 0       | 0        |
+|-------------------+------------------------+-------+---------+----------|
+| BuggyVaultHandler | donate                 | 564   | 0       | 0        |
+|-------------------+------------------------+-------+---------+----------|
+| BuggyVaultHandler | mint                   | 577   | 0       | 0        |
+|-------------------+------------------------+-------+---------+----------|
+| BuggyVaultHandler | redeem                 | 562   | 0       | 0        |
+|-------------------+------------------------+-------+---------+----------|
+| BuggyVaultHandler | withdraw               | 624   | 13      | 0        |
+╰-------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.32s (2.32s CPU time)
+
+Ran 1 test suite in 2.33s (2.32s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/BuggyVault/BuggyVaultInvariant.t.sol:BuggyVaultInvariantTest
+[FAIL: share/asset conversion round trip rounded in the user's favor] invariant_conversionRoundTripNeverFavorsUser
+	[Sequence] (original: 26, shrunk: 3)
+		sender=0x9A42CfA23D4B6aa02d7ecC510CC0F7699B569493 addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=donate(uint256) args=[8341]
+		sender=0x0000000000000000000000000000000000002E3a addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=mint(uint256,uint256) args=[1, 742]
+		sender=0x0000000000000000000000000000000000003AD6 addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=checkConversions(uint256) args=[9844]
+
+[FAIL: deposit then redeem returned more assets than deposited] invariant_depositRedeemCannotProfit
+	[Sequence] (original: 36, shrunk: 2)
+		sender=0x9A42CfA23D4B6aa02d7ecC510CC0F7699B569493 addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=donate(uint256) args=[8341]
+		sender=0x00000000000000000000000000000000000011Dd addr=[test/invariant/BuggyVault/BuggyVaultHandler.sol:BuggyVaultHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=depositRedeemRoundTrip(uint256,uint256) args=[3489, 12916 [1.291e4]]
+
+BuggyVaultInvariantTest invariants: 2/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[FAIL: share/asset conversion round trip rounded in the user's favor] invariant_conversionRoundTripNeverFavorsUser
+[FAIL: deposit then redeem returned more assets than deposited] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+2 invariant failure(s) persisted to cache/invariant/failures/BuggyVaultInvariantTest — rerun to shrink
+ BuggyVaultInvariantTest invariants (runs: 64, calls: 4096, reverts: 13)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xb23174270b0a12c8230939883e5e222d77fc5ed4fbcd03ea29253d6a33885cc0 (use `--fuzz-seed` to reproduce)

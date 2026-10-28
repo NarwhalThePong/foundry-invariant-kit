@@ -1,0 +1,66 @@
+No files changed, compilation skipped
+{"timestamp":1793150675,"event":"failure","invariant":"invariant_totalSupplyEqualsSumOfBalances","target":"test/invariant/MutTokenNoDebit/MutTokenNoDebitInvariant.t.sol:MutTokenNoDebitInvariantTest","reason":"totalSupply != sum of tracked balances: 455396512335513 != 455396512335514"}
+{"timestamp":1793150675,"event":"failure","invariant":"invariant_transfersMoveExactAmount","target":"test/invariant/MutTokenNoDebit/MutTokenNoDebitInvariant.t.sol:MutTokenNoDebitInvariantTest","reason":"a transfer did not move exactly the amount"}
+
+Ran 1 test for test/invariant/MutTokenNoDebit/MutTokenNoDebitInvariant.t.sol:MutTokenNoDebitInvariantTest
+[FAIL: totalSupply != sum of tracked balances: 455396512335513 != 455396512335514] invariant_totalSupplyEqualsSumOfBalances
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0xE90b45B3EcB2cfFaC39e6A01772cA1A2F292e9ea addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4624794923316471942973 [4.624e21], 455396512335513 [4.553e14]]
+		sender=0x0000000000000000000000000000000000001d68 addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4, 63023365384589235464705619824629523281965372575342956379525367989878453250379 [6.302e76], 1000000000000000000000000000000 [1e30]]
+
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0xE90b45B3EcB2cfFaC39e6A01772cA1A2F292e9ea addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4624794923316471942973 [4.624e21], 455396512335513 [4.553e14]]
+		sender=0x0000000000000000000000000000000000001d68 addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4, 63023365384589235464705619824629523281965372575342956379525367989878453250379 [6.302e76], 1000000000000000000000000000000 [1e30]]
+
+MutTokenNoDebitInvariantTest invariants: 2/5 invariants broken
+[PASS] invariant_allowanceAccounting
+[PASS] invariant_noBalanceExceedsTotalSupply
+[FAIL: totalSupply != sum of tracked balances: 455396512335513 != 455396512335514] invariant_totalSupplyEqualsSumOfBalances
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+[PASS] invariant_transfersNeverChangeTotalSupply
+2 invariant failure(s) persisted to cache/invariant/failures/MutTokenNoDebitInvariantTest — rerun to shrink
+ MutTokenNoDebitInvariantTest invariants (runs: 64, calls: 4096, reverts: 652)
+
+╭------------------------+--------------+-------+---------+----------╮
+| Contract               | Selector     | Calls | Reverts | Discards |
++====================================================================+
+| MutTokenNoDebitHandler | approve      | 1010  | 0       | 0        |
+|------------------------+--------------+-------+---------+----------|
+| MutTokenNoDebitHandler | mint         | 1030  | 599     | 0        |
+|------------------------+--------------+-------+---------+----------|
+| MutTokenNoDebitHandler | transfer     | 1033  | 40      | 0        |
+|------------------------+--------------+-------+---------+----------|
+| MutTokenNoDebitHandler | transferFrom | 1023  | 13      | 0        |
+╰------------------------+--------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 6.07s (6.07s CPU time)
+
+Ran 1 test suite in 6.08s (6.07s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutTokenNoDebit/MutTokenNoDebitInvariant.t.sol:MutTokenNoDebitInvariantTest
+[FAIL: totalSupply != sum of tracked balances: 455396512335513 != 455396512335514] invariant_totalSupplyEqualsSumOfBalances
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0xE90b45B3EcB2cfFaC39e6A01772cA1A2F292e9ea addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4624794923316471942973 [4.624e21], 455396512335513 [4.553e14]]
+		sender=0x0000000000000000000000000000000000001d68 addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4, 63023365384589235464705619824629523281965372575342956379525367989878453250379 [6.302e76], 1000000000000000000000000000000 [1e30]]
+
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0xE90b45B3EcB2cfFaC39e6A01772cA1A2F292e9ea addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[4624794923316471942973 [4.624e21], 455396512335513 [4.553e14]]
+		sender=0x0000000000000000000000000000000000001d68 addr=[test/invariant/MutTokenNoDebit/MutTokenNoDebitHandler.sol:MutTokenNoDebitHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[4, 63023365384589235464705619824629523281965372575342956379525367989878453250379 [6.302e76], 1000000000000000000000000000000 [1e30]]
+
+MutTokenNoDebitInvariantTest invariants: 2/5 invariants broken
+[PASS] invariant_allowanceAccounting
+[PASS] invariant_noBalanceExceedsTotalSupply
+[FAIL: totalSupply != sum of tracked balances: 455396512335513 != 455396512335514] invariant_totalSupplyEqualsSumOfBalances
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+[PASS] invariant_transfersNeverChangeTotalSupply
+2 invariant failure(s) persisted to cache/invariant/failures/MutTokenNoDebitInvariantTest — rerun to shrink
+ MutTokenNoDebitInvariantTest invariants (runs: 64, calls: 4096, reverts: 652)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x3d30c836e07f6f29a661dfcc7cca8af4f6e07331a120d7be4e3941d65856a60d (use `--fuzz-seed` to reproduce)

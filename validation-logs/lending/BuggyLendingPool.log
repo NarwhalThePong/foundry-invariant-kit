@@ -1,0 +1,57 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 557.65ms
+Compiler run successful!
+{"timestamp":1793151218,"event":"failure","invariant":"invariant_cashPlusBorrowsCoverDeposits","target":"test/invariant/BuggyLendingPool/BuggyLendingPoolInvariant.t.sol:BuggyLendingPoolInvariantTest","reason":"cash + borrows < deposits: 5661 < 7500"}
+
+Ran 1 test for test/invariant/BuggyLendingPool/BuggyLendingPoolInvariant.t.sol:BuggyLendingPoolInvariantTest
+[FAIL: cash + borrows < deposits: 5661 < 7500] invariant_cashPlusBorrowsCoverDeposits
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000155 addr=[test/invariant/BuggyLendingPool/BuggyLendingPoolHandler.sol:BuggyLendingPoolHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[10000 [1e4], 7500]
+		sender=0x000000000000000000000000000000000000173D addr=[test/invariant/BuggyLendingPool/BuggyLendingPoolHandler.sol:BuggyLendingPoolHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[9949, 1839]
+
+BuggyLendingPoolInvariantTest invariants: 1/6 invariants broken
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[FAIL: cash + borrows < deposits: 5661 < 7500] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+ BuggyLendingPoolInvariantTest invariants (runs: 64, calls: 4096, reverts: 1310)
+
+╭-------------------------+----------+-------+---------+----------╮
+| Contract                | Selector | Calls | Reverts | Discards |
++=================================================================+
+| BuggyLendingPoolHandler | borrow   | 968   | 429     | 0        |
+|-------------------------+----------+-------+---------+----------|
+| BuggyLendingPoolHandler | deposit  | 1086  | 0       | 0        |
+|-------------------------+----------+-------+---------+----------|
+| BuggyLendingPoolHandler | repay    | 984   | 438     | 0        |
+|-------------------------+----------+-------+---------+----------|
+| BuggyLendingPoolHandler | withdraw | 1058  | 443     | 0        |
+╰-------------------------+----------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.04s (1.03s CPU time)
+
+Ran 1 test suite in 1.04s (1.04s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/BuggyLendingPool/BuggyLendingPoolInvariant.t.sol:BuggyLendingPoolInvariantTest
+[FAIL: cash + borrows < deposits: 5661 < 7500] invariant_cashPlusBorrowsCoverDeposits
+	[Sequence] (original: 2, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000155 addr=[test/invariant/BuggyLendingPool/BuggyLendingPoolHandler.sol:BuggyLendingPoolHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[10000 [1e4], 7500]
+		sender=0x000000000000000000000000000000000000173D addr=[test/invariant/BuggyLendingPool/BuggyLendingPoolHandler.sol:BuggyLendingPoolHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[9949, 1839]
+
+BuggyLendingPoolInvariantTest invariants: 1/6 invariants broken
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[FAIL: cash + borrows < deposits: 5661 < 7500] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+ BuggyLendingPoolInvariantTest invariants (runs: 64, calls: 4096, reverts: 1310)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x7d3f6671905e88464f7ffadb4b48b1c67e11180a8e9591d790cdc71be07cbe92 (use `--fuzz-seed` to reproduce)

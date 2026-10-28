@@ -1,0 +1,38 @@
+Compiling 9 files with Solc 0.8.24
+Solc 0.8.24 finished in 1.63s
+Compiler run successful!
+
+Ran 1 test for test/invariant/SafeVault/SafeVaultInvariant.t.sol:SafeVaultInvariantTest
+[PASS]
+SafeVaultInvariantTest invariants:
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ SafeVaultInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭------------------+------------------------+-------+---------+----------╮
+| Contract         | Selector               | Calls | Reverts | Discards |
++========================================================================+
+| SafeVaultHandler | checkConversions       | 610   | 0       | 0        |
+|------------------+------------------------+-------+---------+----------|
+| SafeVaultHandler | deposit                | 567   | 0       | 0        |
+|------------------+------------------------+-------+---------+----------|
+| SafeVaultHandler | depositRedeemRoundTrip | 607   | 0       | 0        |
+|------------------+------------------------+-------+---------+----------|
+| SafeVaultHandler | donate                 | 581   | 0       | 0        |
+|------------------+------------------------+-------+---------+----------|
+| SafeVaultHandler | mint                   | 609   | 0       | 0        |
+|------------------+------------------------+-------+---------+----------|
+| SafeVaultHandler | redeem                 | 546   | 0       | 0        |
+|------------------+------------------------+-------+---------+----------|
+| SafeVaultHandler | withdraw               | 576   | 0       | 0        |
+╰------------------+------------------------+-------+---------+----------╯
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.34s (1.33s CPU time)
+
+Ran 1 test suite in 1.35s (1.34s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

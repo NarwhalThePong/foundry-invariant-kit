@@ -1,0 +1,65 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 645.84ms
+Compiler run successful!
+{"timestamp":1793150735,"event":"failure","invariant":"invariant_noFreeShares","target":"test/invariant/MutVaultFreeShares/MutVaultFreeSharesInvariant.t.sol:MutVaultFreeSharesInvariantTest","reason":"shares minted for zero assets"}
+
+Ran 1 test for test/invariant/MutVaultFreeShares/MutVaultFreeSharesInvariant.t.sol:MutVaultFreeSharesInvariantTest
+[FAIL: shares minted for zero assets] invariant_noFreeShares
+	[Sequence] (original: 42, shrunk: 1)
+		sender=0xffEB2966DC157B98F511F0428176de1fe6737572 addr=[test/invariant/MutVaultFreeShares/MutVaultFreeSharesHandler.sol:MutVaultFreeSharesHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[3, 0]
+
+MutVaultFreeSharesInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[FAIL: shares minted for zero assets] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultFreeSharesInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭---------------------------+------------------------+-------+---------+----------╮
+| Contract                  | Selector               | Calls | Reverts | Discards |
++=================================================================================+
+| MutVaultFreeSharesHandler | checkConversions       | 573   | 0       | 0        |
+|---------------------------+------------------------+-------+---------+----------|
+| MutVaultFreeSharesHandler | deposit                | 595   | 0       | 0        |
+|---------------------------+------------------------+-------+---------+----------|
+| MutVaultFreeSharesHandler | depositRedeemRoundTrip | 586   | 0       | 0        |
+|---------------------------+------------------------+-------+---------+----------|
+| MutVaultFreeSharesHandler | donate                 | 586   | 0       | 0        |
+|---------------------------+------------------------+-------+---------+----------|
+| MutVaultFreeSharesHandler | mint                   | 573   | 0       | 0        |
+|---------------------------+------------------------+-------+---------+----------|
+| MutVaultFreeSharesHandler | redeem                 | 612   | 0       | 0        |
+|---------------------------+------------------------+-------+---------+----------|
+| MutVaultFreeSharesHandler | withdraw               | 571   | 0       | 0        |
+╰---------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.24s (1.23s CPU time)
+
+Ran 1 test suite in 1.24s (1.24s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultFreeShares/MutVaultFreeSharesInvariant.t.sol:MutVaultFreeSharesInvariantTest
+[FAIL: shares minted for zero assets] invariant_noFreeShares
+	[Sequence] (original: 42, shrunk: 1)
+		sender=0xffEB2966DC157B98F511F0428176de1fe6737572 addr=[test/invariant/MutVaultFreeShares/MutVaultFreeSharesHandler.sol:MutVaultFreeSharesHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[3, 0]
+
+MutVaultFreeSharesInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[FAIL: shares minted for zero assets] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultFreeSharesInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xa0604e72c23a78dd3bb36d47ff10a7159385f20ba5a273a2322d1695403eb217 (use `--fuzz-seed` to reproduce)

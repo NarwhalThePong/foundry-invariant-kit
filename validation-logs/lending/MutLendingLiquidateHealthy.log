@@ -1,0 +1,59 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 558.81ms
+Compiler run successful!
+{"timestamp":1793151224,"event":"failure","invariant":"invariant_liquidationOnlyWhenUnhealthy","target":"test/invariant/MutLendingLiquidateHealthy/MutLendingLiquidateHealthyInvariant.t.sol:MutLendingLiquidateHealthyInvariantTest","reason":"liquidate succeeded against a healthy position"}
+
+Ran 1 test for test/invariant/MutLendingLiquidateHealthy/MutLendingLiquidateHealthyInvariant.t.sol:MutLendingLiquidateHealthyInvariantTest
+[FAIL: liquidate succeeded against a healthy position] invariant_liquidationOnlyWhenUnhealthy
+	[Sequence] (original: 2, shrunk: 1)
+		sender=0x3698d072Ec40F0A1dd820E2703026b4Fd98ef7e3 addr=[test/invariant/MutLendingLiquidateHealthy/MutLendingLiquidateHealthyHandler.sol:MutLendingLiquidateHealthyHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=liquidate(uint256,uint256,uint256) args=[7549, 1000000000000000000000000000000 [1e30], 3]
+
+MutLendingLiquidateHealthyInvariantTest invariants: 1/7 invariants broken
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[FAIL: liquidate succeeded against a healthy position] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+ MutLendingLiquidateHealthyInvariantTest invariants (runs: 64, calls: 4096, reverts: 786)
+
+╭-----------------------------------+-----------+-------+---------+----------╮
+| Contract                          | Selector  | Calls | Reverts | Discards |
++============================================================================+
+| MutLendingLiquidateHealthyHandler | borrow    | 831   | 425     | 0        |
+|-----------------------------------+-----------+-------+---------+----------|
+| MutLendingLiquidateHealthyHandler | deposit   | 814   | 0       | 0        |
+|-----------------------------------+-----------+-------+---------+----------|
+| MutLendingLiquidateHealthyHandler | liquidate | 822   | 0       | 0        |
+|-----------------------------------+-----------+-------+---------+----------|
+| MutLendingLiquidateHealthyHandler | repay     | 823   | 0       | 0        |
+|-----------------------------------+-----------+-------+---------+----------|
+| MutLendingLiquidateHealthyHandler | withdraw  | 806   | 361     | 0        |
+╰-----------------------------------+-----------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 934.73ms (930.99ms CPU time)
+
+Ran 1 test suite in 937.85ms (934.73ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutLendingLiquidateHealthy/MutLendingLiquidateHealthyInvariant.t.sol:MutLendingLiquidateHealthyInvariantTest
+[FAIL: liquidate succeeded against a healthy position] invariant_liquidationOnlyWhenUnhealthy
+	[Sequence] (original: 2, shrunk: 1)
+		sender=0x3698d072Ec40F0A1dd820E2703026b4Fd98ef7e3 addr=[test/invariant/MutLendingLiquidateHealthy/MutLendingLiquidateHealthyHandler.sol:MutLendingLiquidateHealthyHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=liquidate(uint256,uint256,uint256) args=[7549, 1000000000000000000000000000000 [1e30], 3]
+
+MutLendingLiquidateHealthyInvariantTest invariants: 1/7 invariants broken
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[FAIL: liquidate succeeded against a healthy position] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+ MutLendingLiquidateHealthyInvariantTest invariants (runs: 64, calls: 4096, reverts: 786)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x565ababd8209be363c75cc7f86efd6389042840daac057d34d1a5d028ffa2837 (use `--fuzz-seed` to reproduce)

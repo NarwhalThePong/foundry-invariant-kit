@@ -1,0 +1,65 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 590.35ms
+Compiler run successful!
+{"timestamp":1793150737,"event":"failure","invariant":"invariant_previewDepositLeDeposit","target":"test/invariant/MutVaultPreviewDeposit/MutVaultPreviewDepositInvariant.t.sol:MutVaultPreviewDepositInvariantTest","reason":"previewDeposit > shares minted by deposit"}
+
+Ran 1 test for test/invariant/MutVaultPreviewDeposit/MutVaultPreviewDepositInvariant.t.sol:MutVaultPreviewDepositInvariantTest
+[FAIL: previewDeposit > shares minted by deposit] invariant_previewDepositLeDeposit
+	[Sequence] (original: 5, shrunk: 1)
+		sender=0x0000000000000000000000000000000000003447 addr=[test/invariant/MutVaultPreviewDeposit/MutVaultPreviewDepositHandler.sol:MutVaultPreviewDepositHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[3, 18]
+
+MutVaultPreviewDepositInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[FAIL: previewDeposit > shares minted by deposit] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewDepositInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭-------------------------------+------------------------+-------+---------+----------╮
+| Contract                      | Selector               | Calls | Reverts | Discards |
++=====================================================================================+
+| MutVaultPreviewDepositHandler | checkConversions       | 594   | 0       | 0        |
+|-------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewDepositHandler | deposit                | 561   | 0       | 0        |
+|-------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewDepositHandler | depositRedeemRoundTrip | 548   | 0       | 0        |
+|-------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewDepositHandler | donate                 | 568   | 0       | 0        |
+|-------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewDepositHandler | mint                   | 586   | 0       | 0        |
+|-------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewDepositHandler | redeem                 | 601   | 0       | 0        |
+|-------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewDepositHandler | withdraw               | 638   | 0       | 0        |
+╰-------------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.14s (1.14s CPU time)
+
+Ran 1 test suite in 1.15s (1.14s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultPreviewDeposit/MutVaultPreviewDepositInvariant.t.sol:MutVaultPreviewDepositInvariantTest
+[FAIL: previewDeposit > shares minted by deposit] invariant_previewDepositLeDeposit
+	[Sequence] (original: 5, shrunk: 1)
+		sender=0x0000000000000000000000000000000000003447 addr=[test/invariant/MutVaultPreviewDeposit/MutVaultPreviewDepositHandler.sol:MutVaultPreviewDepositHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[3, 18]
+
+MutVaultPreviewDepositInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[FAIL: previewDeposit > shares minted by deposit] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewDepositInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x11bebdbd268e4a926e80dc946355dc0765d378411866d65c8a9b0445d6328e6a (use `--fuzz-seed` to reproduce)

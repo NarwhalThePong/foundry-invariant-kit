@@ -1,0 +1,78 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 537.46ms
+Compiler run successful!
+{"timestamp":1793151221,"event":"failure","invariant":"invariant_cashPlusBorrowsCoverDeposits","target":"test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountInvariant.t.sol:MutLendingRepayMiscountInvariantTest","reason":"cash + borrows < deposits: 374747813877104708621957372167 < 424387070582307175042961329106"}
+{"timestamp":1793151221,"event":"failure","invariant":"invariant_repayCreditsAtMostWhatWasPaid","target":"test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountInvariant.t.sol:MutLendingRepayMiscountInvariantTest","reason":"repay reduced debt by more than the pool received"}
+
+Ran 1 test for test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountInvariant.t.sol:MutLendingRepayMiscountInvariantTest
+[FAIL: cash + borrows < deposits: 374747813877104708621957372167 < 424387070582307175042961329106] invariant_cashPlusBorrowsCoverDeposits
+	[Sequence] (original: 20, shrunk: 3)
+		sender=0x169CEfB424F758A0c67308c85F697Fe88875A20F addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[19209223682296506820565025190 [1.92e28], 115792089237316195423570985008687907853269984665640564039457584007913129639934 [1.157e77]]
+		sender=0x83A5d1D65B6bba583549eB82059aB1078cf7A246 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[25167574667551599590582798642667799560960752627273972647087 [2.516e58], 2946099278513410404932842007916826 [2.946e33]]
+		sender=0x21cfF632e2b57714a1Cb0EFec1e1e13faF91Bec7 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[1545955434812260029930848202875381017859144238183957701301207541 [1.545e63], 115792089237316195423570985008687907853269984665640564039457584007913129639933 [1.157e77]]
+
+[FAIL: repay reduced debt by more than the pool received] invariant_repayCreditsAtMostWhatWasPaid
+	[Sequence] (original: 20, shrunk: 3)
+		sender=0x169CEfB424F758A0c67308c85F697Fe88875A20F addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[19209223682296506820565025190 [1.92e28], 115792089237316195423570985008687907853269984665640564039457584007913129639934 [1.157e77]]
+		sender=0x83A5d1D65B6bba583549eB82059aB1078cf7A246 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[25167574667551599590582798642667799560960752627273972647087 [2.516e58], 2946099278513410404932842007916826 [2.946e33]]
+		sender=0x21cfF632e2b57714a1Cb0EFec1e1e13faF91Bec7 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[1545955434812260029930848202875381017859144238183957701301207541 [1.545e63], 115792089237316195423570985008687907853269984665640564039457584007913129639933 [1.157e77]]
+
+MutLendingRepayMiscountInvariantTest invariants: 2/7 invariants broken
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[FAIL: cash + borrows < deposits: 374747813877104708621957372167 < 424387070582307175042961329106] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[FAIL: repay reduced debt by more than the pool received] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutLendingRepayMiscountInvariantTest — rerun to shrink
+ MutLendingRepayMiscountInvariantTest invariants (runs: 64, calls: 4096, reverts: 1633)
+
+╭--------------------------------+-----------+-------+---------+----------╮
+| Contract                       | Selector  | Calls | Reverts | Discards |
++=========================================================================+
+| MutLendingRepayMiscountHandler | borrow    | 802   | 400     | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepayMiscountHandler | deposit   | 817   | 0       | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepayMiscountHandler | liquidate | 838   | 838     | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepayMiscountHandler | repay     | 817   | 0       | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepayMiscountHandler | withdraw  | 822   | 395     | 0        |
+╰--------------------------------+-----------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.66s (2.66s CPU time)
+
+Ran 1 test suite in 2.66s (2.66s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountInvariant.t.sol:MutLendingRepayMiscountInvariantTest
+[FAIL: cash + borrows < deposits: 374747813877104708621957372167 < 424387070582307175042961329106] invariant_cashPlusBorrowsCoverDeposits
+	[Sequence] (original: 20, shrunk: 3)
+		sender=0x169CEfB424F758A0c67308c85F697Fe88875A20F addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[19209223682296506820565025190 [1.92e28], 115792089237316195423570985008687907853269984665640564039457584007913129639934 [1.157e77]]
+		sender=0x83A5d1D65B6bba583549eB82059aB1078cf7A246 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[25167574667551599590582798642667799560960752627273972647087 [2.516e58], 2946099278513410404932842007916826 [2.946e33]]
+		sender=0x21cfF632e2b57714a1Cb0EFec1e1e13faF91Bec7 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[1545955434812260029930848202875381017859144238183957701301207541 [1.545e63], 115792089237316195423570985008687907853269984665640564039457584007913129639933 [1.157e77]]
+
+[FAIL: repay reduced debt by more than the pool received] invariant_repayCreditsAtMostWhatWasPaid
+	[Sequence] (original: 20, shrunk: 3)
+		sender=0x169CEfB424F758A0c67308c85F697Fe88875A20F addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[19209223682296506820565025190 [1.92e28], 115792089237316195423570985008687907853269984665640564039457584007913129639934 [1.157e77]]
+		sender=0x83A5d1D65B6bba583549eB82059aB1078cf7A246 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[25167574667551599590582798642667799560960752627273972647087 [2.516e58], 2946099278513410404932842007916826 [2.946e33]]
+		sender=0x21cfF632e2b57714a1Cb0EFec1e1e13faF91Bec7 addr=[test/invariant/MutLendingRepayMiscount/MutLendingRepayMiscountHandler.sol:MutLendingRepayMiscountHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[1545955434812260029930848202875381017859144238183957701301207541 [1.545e63], 115792089237316195423570985008687907853269984665640564039457584007913129639933 [1.157e77]]
+
+MutLendingRepayMiscountInvariantTest invariants: 2/7 invariants broken
+[PASS] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[FAIL: cash + borrows < deposits: 374747813877104708621957372167 < 424387070582307175042961329106] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[FAIL: repay reduced debt by more than the pool received] invariant_repayCreditsAtMostWhatWasPaid
+[PASS] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutLendingRepayMiscountInvariantTest — rerun to shrink
+ MutLendingRepayMiscountInvariantTest invariants (runs: 64, calls: 4096, reverts: 1633)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xd18085f4f89d71e5005cf658c3bad683a3bfda56697e1f0de830d9b2f8a75bb3 (use `--fuzz-seed` to reproduce)

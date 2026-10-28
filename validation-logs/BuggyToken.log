@@ -1,0 +1,66 @@
+No files changed, compilation skipped
+{"timestamp":1793150748,"event":"failure","invariant":"invariant_transfersMoveExactAmount","target":"test/invariant/BuggyToken/BuggyTokenInvariant.t.sol:BuggyTokenInvariantTest","reason":"a transfer did not move exactly the amount"}
+{"timestamp":1793150748,"event":"failure","invariant":"invariant_transfersNeverChangeTotalSupply","target":"test/invariant/BuggyToken/BuggyTokenInvariant.t.sol:BuggyTokenInvariantTest","reason":"a transfer changed totalSupply"}
+
+Ran 1 test for test/invariant/BuggyToken/BuggyTokenInvariant.t.sol:BuggyTokenInvariantTest
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+	[Sequence] (original: 6, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[1000000000000000000000000000000 [1e30], 1000000000000000000000000 [1e24]]
+		sender=0x0000000000000000000000000000000000000172 addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[2857047311731120530387975171895 [2.857e30], 98916821103090510181609139761334738913465496949311 [9.891e49], 32165633403177711 [3.216e16]]
+
+[FAIL: a transfer changed totalSupply] invariant_transfersNeverChangeTotalSupply
+	[Sequence] (original: 6, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[1000000000000000000000000000000 [1e30], 1000000000000000000000000 [1e24]]
+		sender=0x0000000000000000000000000000000000000172 addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[2857047311731120530387975171895 [2.857e30], 98916821103090510181609139761334738913465496949311 [9.891e49], 32165633403177711 [3.216e16]]
+
+BuggyTokenInvariantTest invariants: 2/5 invariants broken
+[PASS] invariant_allowanceAccounting
+[PASS] invariant_noBalanceExceedsTotalSupply
+[PASS] invariant_totalSupplyEqualsSumOfBalances
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+[FAIL: a transfer changed totalSupply] invariant_transfersNeverChangeTotalSupply
+2 invariant failure(s) persisted to cache/invariant/failures/BuggyTokenInvariantTest — rerun to shrink
+ BuggyTokenInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭-------------------+--------------+-------+---------+----------╮
+| Contract          | Selector     | Calls | Reverts | Discards |
++===============================================================+
+| BuggyTokenHandler | approve      | 1003  | 0       | 0        |
+|-------------------+--------------+-------+---------+----------|
+| BuggyTokenHandler | mint         | 1040  | 0       | 0        |
+|-------------------+--------------+-------+---------+----------|
+| BuggyTokenHandler | transfer     | 1040  | 0       | 0        |
+|-------------------+--------------+-------+---------+----------|
+| BuggyTokenHandler | transferFrom | 1013  | 0       | 0        |
+╰-------------------+--------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.95s (5.95s CPU time)
+
+Ran 1 test suite in 5.95s (5.95s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/BuggyToken/BuggyTokenInvariant.t.sol:BuggyTokenInvariantTest
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+	[Sequence] (original: 6, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[1000000000000000000000000000000 [1e30], 1000000000000000000000000 [1e24]]
+		sender=0x0000000000000000000000000000000000000172 addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[2857047311731120530387975171895 [2.857e30], 98916821103090510181609139761334738913465496949311 [9.891e49], 32165633403177711 [3.216e16]]
+
+[FAIL: a transfer changed totalSupply] invariant_transfersNeverChangeTotalSupply
+	[Sequence] (original: 6, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mint(uint256,uint256) args=[1000000000000000000000000000000 [1e30], 1000000000000000000000000 [1e24]]
+		sender=0x0000000000000000000000000000000000000172 addr=[test/invariant/BuggyToken/BuggyTokenHandler.sol:BuggyTokenHandler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=transfer(uint256,uint256,uint256) args=[2857047311731120530387975171895 [2.857e30], 98916821103090510181609139761334738913465496949311 [9.891e49], 32165633403177711 [3.216e16]]
+
+BuggyTokenInvariantTest invariants: 2/5 invariants broken
+[PASS] invariant_allowanceAccounting
+[PASS] invariant_noBalanceExceedsTotalSupply
+[PASS] invariant_totalSupplyEqualsSumOfBalances
+[FAIL: a transfer did not move exactly the amount] invariant_transfersMoveExactAmount
+[FAIL: a transfer changed totalSupply] invariant_transfersNeverChangeTotalSupply
+2 invariant failure(s) persisted to cache/invariant/failures/BuggyTokenInvariantTest — rerun to shrink
+ BuggyTokenInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xf3c9bdd36190aa773ac2f58621560cd797d7bbf396bc95b1c0edab678a90e0fb (use `--fuzz-seed` to reproduce)

@@ -1,0 +1,67 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 624.63ms
+Compiler run successful!
+{"timestamp":1793150741,"event":"failure","invariant":"invariant_previewsAreConservative","target":"test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemInvariant.t.sol:MutVaultPreviewRedeemInvariantTest","reason":"previewRedeem > assets paid by redeem"}
+
+Ran 1 test for test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemInvariant.t.sol:MutVaultPreviewRedeemInvariantTest
+[FAIL: previewRedeem > assets paid by redeem] invariant_previewsAreConservative
+	[Sequence] (original: 14, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000eB4 addr=[test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemHandler.sol:MutVaultPreviewRedeemHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[3694353678 [3.694e9], 12134 [1.213e4]]
+		sender=0x00000000000000000000000000000000000004c8 addr=[test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemHandler.sol:MutVaultPreviewRedeemHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=redeem(uint256,uint256) args=[9822, 18]
+
+MutVaultPreviewRedeemInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[FAIL: previewRedeem > assets paid by redeem] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewRedeemInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭------------------------------+------------------------+-------+---------+----------╮
+| Contract                     | Selector               | Calls | Reverts | Discards |
++====================================================================================+
+| MutVaultPreviewRedeemHandler | checkConversions       | 570   | 0       | 0        |
+|------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewRedeemHandler | deposit                | 573   | 0       | 0        |
+|------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewRedeemHandler | depositRedeemRoundTrip | 619   | 0       | 0        |
+|------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewRedeemHandler | donate                 | 536   | 0       | 0        |
+|------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewRedeemHandler | mint                   | 593   | 0       | 0        |
+|------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewRedeemHandler | redeem                 | 607   | 0       | 0        |
+|------------------------------+------------------------+-------+---------+----------|
+| MutVaultPreviewRedeemHandler | withdraw               | 598   | 0       | 0        |
+╰------------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.80s (1.79s CPU time)
+
+Ran 1 test suite in 1.80s (1.80s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemInvariant.t.sol:MutVaultPreviewRedeemInvariantTest
+[FAIL: previewRedeem > assets paid by redeem] invariant_previewsAreConservative
+	[Sequence] (original: 14, shrunk: 2)
+		sender=0x0000000000000000000000000000000000000eB4 addr=[test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemHandler.sol:MutVaultPreviewRedeemHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[3694353678 [3.694e9], 12134 [1.213e4]]
+		sender=0x00000000000000000000000000000000000004c8 addr=[test/invariant/MutVaultPreviewRedeem/MutVaultPreviewRedeemHandler.sol:MutVaultPreviewRedeemHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=redeem(uint256,uint256) args=[9822, 18]
+
+MutVaultPreviewRedeemInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[FAIL: previewRedeem > assets paid by redeem] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultPreviewRedeemInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0xfa21c8137015a45d9dde368e6c49998816e8111742eb4a8c1e42f20bedeb0d8f (use `--fuzz-seed` to reproduce)

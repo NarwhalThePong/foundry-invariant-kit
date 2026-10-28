@@ -1,0 +1,76 @@
+No files changed, compilation skipped
+{"timestamp":1793151225,"event":"failure","invariant":"invariant_repayNeverIncreasesDebt","target":"test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipInvariant.t.sol:MutLendingRepaySignFlipInvariantTest","reason":"repay increased debt"}
+{"timestamp":1793151225,"event":"failure","invariant":"invariant_allActorsHealthy","target":"test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipInvariant.t.sol:MutLendingRepaySignFlipInvariantTest","reason":"actor below health threshold"}
+
+Ran 1 test for test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipInvariant.t.sol:MutLendingRepaySignFlipInvariantTest
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+	[Sequence] (original: 32, shrunk: 3)
+		sender=0x00000000000000000000000000000000000003e2 addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[4, 11109 [1.11e4]]
+		sender=0x6B536A3492e8489bB3E8B0171D603B6F2f7494a3 addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[697, 7500]
+		sender=0x54A0936d105834e759FF14fE68716aE9841FA84d addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[4078, 4078]
+
+[FAIL: repay increased debt] invariant_repayNeverIncreasesDebt
+	[Sequence] (original: 19, shrunk: 3)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[4, 7500]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[1000000000000000000000000 [1e24], 508]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[4, 3718]
+
+MutLendingRepaySignFlipInvariantTest invariants: 2/7 invariants broken
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[FAIL: repay increased debt] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutLendingRepaySignFlipInvariantTest — rerun to shrink
+ MutLendingRepaySignFlipInvariantTest invariants (runs: 64, calls: 4096, reverts: 1654)
+
+╭--------------------------------+-----------+-------+---------+----------╮
+| Contract                       | Selector  | Calls | Reverts | Discards |
++=========================================================================+
+| MutLendingRepaySignFlipHandler | borrow    | 784   | 402     | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepaySignFlipHandler | deposit   | 836   | 0       | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepaySignFlipHandler | liquidate | 833   | 828     | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepaySignFlipHandler | repay     | 811   | 40      | 0        |
+|--------------------------------+-----------+-------+---------+----------|
+| MutLendingRepaySignFlipHandler | withdraw  | 832   | 384     | 0        |
+╰--------------------------------+-----------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.57s (2.56s CPU time)
+
+Ran 1 test suite in 2.57s (2.57s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipInvariant.t.sol:MutLendingRepaySignFlipInvariantTest
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+	[Sequence] (original: 32, shrunk: 3)
+		sender=0x00000000000000000000000000000000000003e2 addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[4, 11109 [1.11e4]]
+		sender=0x6B536A3492e8489bB3E8B0171D603B6F2f7494a3 addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[697, 7500]
+		sender=0x54A0936d105834e759FF14fE68716aE9841FA84d addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[4078, 4078]
+
+[FAIL: repay increased debt] invariant_repayNeverIncreasesDebt
+	[Sequence] (original: 19, shrunk: 3)
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[4, 7500]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=borrow(uint256,uint256) args=[1000000000000000000000000 [1e24], 508]
+		sender=0x0000000000000000000000000000000000000FEE addr=[test/invariant/MutLendingRepaySignFlip/MutLendingRepaySignFlipHandler.sol:MutLendingRepaySignFlipHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=repay(uint256,uint256) args=[4, 3718]
+
+MutLendingRepaySignFlipInvariantTest invariants: 2/7 invariants broken
+[FAIL: actor below health threshold] invariant_allActorsHealthy
+[PASS] invariant_borrowsNeverExceedDeposits
+[PASS] invariant_cashPlusBorrowsCoverDeposits
+[PASS] invariant_liquidationOnlyWhenUnhealthy
+[PASS] invariant_repayCreditsAtMostWhatWasPaid
+[FAIL: repay increased debt] invariant_repayNeverIncreasesDebt
+[PASS] invariant_successfulBorrowStaysHealthy
+2 invariant failure(s) persisted to examples/cache/invariant/failures/MutLendingRepaySignFlipInvariantTest — rerun to shrink
+ MutLendingRepaySignFlipInvariantTest invariants (runs: 64, calls: 4096, reverts: 1654)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x8cb69c94648bfddcd0f5dd50fab0e46d65c33c8caf32040fb44ae2d4bccd45ac (use `--fuzz-seed` to reproduce)

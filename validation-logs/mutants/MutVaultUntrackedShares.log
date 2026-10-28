@@ -1,0 +1,65 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 606.37ms
+Compiler run successful!
+{"timestamp":1793150745,"event":"failure","invariant":"invariant_totalSupplyEqualsSumOfShares","target":"test/invariant/MutVaultUntrackedShares/MutVaultUntrackedSharesInvariant.t.sol:MutVaultUntrackedSharesInvariantTest","reason":"totalSupply != sum of tracked share balances: 67960600264843928800362822 != 67960600264843928800362821"}
+
+Ran 1 test for test/invariant/MutVaultUntrackedShares/MutVaultUntrackedSharesInvariant.t.sol:MutVaultUntrackedSharesInvariantTest
+[FAIL: totalSupply != sum of tracked share balances: 67960600264843928800362822 != 67960600264843928800362821] invariant_totalSupplyEqualsSumOfShares
+	[Sequence] (original: 14, shrunk: 1)
+		sender=0x0000000000000000000000000000000000002675 addr=[test/invariant/MutVaultUntrackedShares/MutVaultUntrackedSharesHandler.sol:MutVaultUntrackedSharesHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[1730, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+
+MutVaultUntrackedSharesInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[FAIL: totalSupply != sum of tracked share balances: 67960600264843928800362822 != 67960600264843928800362821] invariant_totalSupplyEqualsSumOfShares
+ MutVaultUntrackedSharesInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭--------------------------------+------------------------+-------+---------+----------╮
+| Contract                       | Selector               | Calls | Reverts | Discards |
++======================================================================================+
+| MutVaultUntrackedSharesHandler | checkConversions       | 583   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultUntrackedSharesHandler | deposit                | 617   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultUntrackedSharesHandler | depositRedeemRoundTrip | 573   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultUntrackedSharesHandler | donate                 | 589   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultUntrackedSharesHandler | mint                   | 581   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultUntrackedSharesHandler | redeem                 | 594   | 0       | 0        |
+|--------------------------------+------------------------+-------+---------+----------|
+| MutVaultUntrackedSharesHandler | withdraw               | 559   | 0       | 0        |
+╰--------------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.06s (1.05s CPU time)
+
+Ran 1 test suite in 1.06s (1.06s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultUntrackedShares/MutVaultUntrackedSharesInvariant.t.sol:MutVaultUntrackedSharesInvariantTest
+[FAIL: totalSupply != sum of tracked share balances: 67960600264843928800362822 != 67960600264843928800362821] invariant_totalSupplyEqualsSumOfShares
+	[Sequence] (original: 14, shrunk: 1)
+		sender=0x0000000000000000000000000000000000002675 addr=[test/invariant/MutVaultUntrackedShares/MutVaultUntrackedSharesHandler.sol:MutVaultUntrackedSharesHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=deposit(uint256,uint256) args=[1730, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]]
+
+MutVaultUntrackedSharesInvariantTest invariants: 1/8 invariants broken
+[PASS] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[FAIL: totalSupply != sum of tracked share balances: 67960600264843928800362822 != 67960600264843928800362821] invariant_totalSupplyEqualsSumOfShares
+ MutVaultUntrackedSharesInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x167f155a5ac0983f45a7725a1329a3327ae468528614f61757ac04a5c064db41 (use `--fuzz-seed` to reproduce)

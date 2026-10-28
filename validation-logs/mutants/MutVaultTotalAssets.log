@@ -1,0 +1,58 @@
+Compiling 1 files with Solc 0.8.24
+Solc 0.8.24 finished in 602.59ms
+Compiler run successful!
+
+Ran 1 test for test/invariant/MutVaultTotalAssets/MutVaultTotalAssetsInvariant.t.sol:MutVaultTotalAssetsInvariantTest
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 1000000000000000000] invariant_assetsHeldCoverTotalAssets
+MutVaultTotalAssetsInvariantTest invariants: 1/8 invariants broken
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 1000000000000000000] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultTotalAssetsInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+╭----------------------------+------------------------+-------+---------+----------╮
+| Contract                   | Selector               | Calls | Reverts | Discards |
++==================================================================================+
+| MutVaultTotalAssetsHandler | checkConversions       | 593   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultTotalAssetsHandler | deposit                | 591   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultTotalAssetsHandler | depositRedeemRoundTrip | 578   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultTotalAssetsHandler | donate                 | 551   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultTotalAssetsHandler | mint                   | 566   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultTotalAssetsHandler | redeem                 | 602   | 0       | 0        |
+|----------------------------+------------------------+-------+---------+----------|
+| MutVaultTotalAssetsHandler | withdraw               | 615   | 0       | 0        |
+╰----------------------------+------------------------+-------+---------+----------╯
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.20s (1.19s CPU time)
+
+Ran 1 test suite in 1.20s (1.20s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/invariant/MutVaultTotalAssets/MutVaultTotalAssetsInvariant.t.sol:MutVaultTotalAssetsInvariantTest
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 1000000000000000000] invariant_assetsHeldCoverTotalAssets
+MutVaultTotalAssetsInvariantTest invariants: 1/8 invariants broken
+[FAIL: vault holds fewer assets than totalAssets reports: 0 < 1000000000000000000] invariant_assetsHeldCoverTotalAssets
+[PASS] invariant_conversionRoundTripNeverFavorsUser
+[PASS] invariant_depositRedeemCannotProfit
+[PASS] invariant_noFreeShares
+[PASS] invariant_previewDepositLeDeposit
+[PASS] invariant_previewsAreConservative
+[PASS] invariant_solvency
+[PASS] invariant_totalSupplyEqualsSumOfShares
+ MutVaultTotalAssetsInvariantTest invariants (runs: 64, calls: 4096, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test
+
+Fuzz seed: 0x7510a6ad74f927a90c5f4b95254465397deba353e56216611b232cdc8b6d8c0 (use `--fuzz-seed` to reproduce)
