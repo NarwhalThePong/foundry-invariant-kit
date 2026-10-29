@@ -54,6 +54,21 @@ depth = 64
 fail_on_revert = false
 ```
 
+### Catch runs where every handler call reverted (`--require-progress`, new in 0.1.2)
+
+With `fail_on_revert = false`, reverted handler calls are discarded silently, so a suite whose actions all revert still passes (see [foundry-rs/foundry#5726](https://github.com/foundry-rs/foundry/issues/5726)). `--require-progress` adds an `afterInvariant()` hook that sums the handler's per-action success counters and fails the run if none succeeded. Example with a pool whose functions all `require(!paused)`:
+
+```
+$ npx foundry-invariant-kit init --type lending --contract src/PausedPool.sol
+$ forge test --match-contract PausedPoolInvariantTest
+Suite result: ok. 1 passed; 0 failed        # vacuous green
+$ npx foundry-invariant-kit init --type lending --contract src/PausedPool.sol --force --require-progress
+$ forge test --match-contract PausedPoolInvariantTest
+[FAIL: no handler action succeeded in this run: every call reverted: 0 <= 0] ...
+```
+
+On the ERC-20 quick-start token the same flag passes. Needs a Foundry version with `afterInvariant()` support.
+
 ## Supported types
 
 | type | generates | properties |

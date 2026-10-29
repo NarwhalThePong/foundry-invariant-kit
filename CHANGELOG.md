@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-10-28
+
+- New `--require-progress` option: adds an `afterInvariant()` hook that fails a run in which every handler call reverted. With `fail_on_revert = false` such runs otherwise pass vacuously (foundry-rs/foundry#5726).
+
 ## 0.1.1 - 2026-10-28
 
 - README: new Quick start section with a self-contained example that runs from an empty folder. No code changes.

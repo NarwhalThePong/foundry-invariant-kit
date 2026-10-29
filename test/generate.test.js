@@ -130,3 +130,18 @@ test('cli: rejects a bad --ltv-bps', () => {
   const c = capture();
   assert.strictEqual(main(['init', '--type', 'lending', '--contract', 'x.sol', '--ltv-bps', 'abc'], c.io), 2);
 });
+
+test('--require-progress adds an afterInvariant() hook summing every handler action; off by default', () => {
+  const cwd = tmp();
+  const src = fs.readdirSync(path.join(cwd, 'src')).find((f) => /Token/.test(f));
+  generate({ type: 'erc20', contractPath: 'src/' + src, cwd, force: true });
+  const dir = fs.readdirSync(path.join(cwd, 'test/invariant'))[0];
+  const f = path.join(cwd, 'test/invariant', dir, dir + 'Invariant.t.sol');
+  assert.ok(!fs.readFileSync(f, 'utf8').includes('afterInvariant'));
+  generate({ type: 'erc20', contractPath: 'src/' + src, cwd, force: true, requireProgress: true });
+  const t = fs.readFileSync(f, 'utf8');
+  assert.match(t, /function afterInvariant\(\) public view/);
+  for (const a of ['mint', 'transfer', 'approve', 'transferFrom']) assert.ok(t.includes(`handler.calls("${a}")`), a);
+  assert.ok(t.trimEnd().endsWith('}'));
+  assert.strictEqual(parseArgs(['init', '--require-progress']).requireProgress, true);
+});
