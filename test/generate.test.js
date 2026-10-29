@@ -86,7 +86,7 @@ test('CLI flag handling', () => {
   let c = capture();
   assert.strictEqual(main(['--help'], c.io), 0);
   assert.match(c.out.join(''), /lending\s+EXPERIMENTAL/);
-  c = capture(); assert.strictEqual(main(['--version'], c.io), 0); assert.strictEqual(c.out[0], '0.1.0');
+  c = capture(); assert.strictEqual(main(['--version'], c.io), 0); assert.strictEqual(c.out[0], require('../package.json').version);
   c = capture(); assert.strictEqual(main(['build'], c.io), 2); assert.match(c.err.join(''), /unknown command/);
   c = capture(); assert.strictEqual(main(['init', '--contract', 'x.sol'], c.io), 2); assert.match(c.err.join(''), /--type is required/);
   c = capture(); assert.strictEqual(main(['init', '--type', 'nft', '--contract', 'x.sol'], c.io), 1); assert.match(c.err.join(''), /unknown type/);

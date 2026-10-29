@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 - 2026-10-28
+
+- README: new Quick start section with a self-contained example that runs from an empty folder. No code changes.
+
 ## 0.1.0 (2026-10-28)
 
 - `init --type erc20`: handler with bounded actors/ghost flags and five supply, balance and allowance invariants.

@@ -1,6 +1,6 @@
 {
   "name": "foundry-invariant-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Generate Foundry invariant and fuzz test scaffolds (ERC-20, ERC-4626, experimental lending) from a Solidity contract.",
   "bin": {

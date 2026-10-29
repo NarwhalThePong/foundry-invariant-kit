@@ -10,6 +10,28 @@ generated properties held for the inputs the fuzzer tried. You must review the
 generated properties, fix every `TODO`, and add the properties that are specific
 to your protocol.
 
+## Quick start
+
+Needs Node 18+ and Foundry. Example with a plain OpenZeppelin ERC-20:
+
+```sh
+forge init mytoken && cd mytoken
+forge install OpenZeppelin/openzeppelin-contracts
+echo '@openzeppelin/=lib/openzeppelin-contracts/' > remappings.txt
+cat > src/MyToken.sol <<'EOF'
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+contract MyToken is ERC20 {
+    constructor() ERC20("My Token", "MTK") {}
+}
+EOF
+npx foundry-invariant-kit init --type erc20 --contract src/MyToken.sol
+forge test --match-contract MyTokenInvariantTest
+```
+
+This writes `test/invariant/MyToken/` (Handler, Invariant test, notes) and the suite passes: the handler drives `mint`, `transfer`, `approve` and `transferFrom` across three actors, and the supply, balance and allowance properties hold. With Foundry's default invariant settings the run takes about 30 seconds; the `foundry.toml` settings below make it faster.
+
 ## Usage
 
 ```sh
